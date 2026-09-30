@@ -481,7 +481,7 @@ func getAuthority(sans []string) (string, error) {
 func getRootCertificate(endpoint, fingerprint string) (*x509.Certificate, error) {
 	conn, err := grpc.NewClient(endpoint, grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{
 		//nolint:gosec // used in bootstrap protocol
-		InsecureSkipVerify: true, // lgtm[go/disabled-certificate-check]
+		InsecureSkipVerify: false, // lgtm[go/disabled-certificate-check]
 	})))
 	if err != nil {
 		return nil, errors.Wrapf(err, "error connecting %s", endpoint)
