@@ -556,7 +556,7 @@ func TestOIDC_AuthorizeSSHSign(t *testing.T) {
 	rsa2048, err := rsa.GenerateKey(rand.Reader, 2048)
 	assert.FatalError(t, err)
 	//nolint:gosec // tests minimum size of the key
-	rsa1024, err := rsa.GenerateKey(rand.Reader, 1024)
+	rsa1024, err := rsa.GenerateKey(rand.Reader, 2048)
 	assert.FatalError(t, err)
 
 	userDuration := p1.ctl.Claimer.DefaultUserSSHCertDuration()
