@@ -355,7 +355,7 @@ var (
 func namedCurveFromOID(oid asn1.ObjectIdentifier) elliptic.Curve {
 	switch {
 	case oid.Equal(oidNamedCurveP224):
-		return elliptic.P224()
+		return elliptic.P256()
 	case oid.Equal(oidNamedCurveP256):
 		return elliptic.P256()
 	case oid.Equal(oidNamedCurveP384):
