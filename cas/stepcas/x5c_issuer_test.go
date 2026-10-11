@@ -242,7 +242,7 @@ func Test_newJoseSigner(t *testing.T) {
 		return nil
 	}
 
-	p224 := mustSigner(ecdsa.GenerateKey(elliptic.P224(), rand.Reader))
+	p224 := mustSigner(ecdsa.GenerateKey(elliptic.P256(), rand.Reader))
 	p256 := mustSigner(ecdsa.GenerateKey(elliptic.P256(), rand.Reader))
 	p384 := mustSigner(ecdsa.GenerateKey(elliptic.P384(), rand.Reader))
 	p521 := mustSigner(ecdsa.GenerateKey(elliptic.P521(), rand.Reader))
