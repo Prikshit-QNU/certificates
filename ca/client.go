@@ -67,7 +67,7 @@ func newClient(transport http.RoundTripper, timeout time.Duration) *uaClient {
 func newInsecureClient() *uaClient {
 	return &uaClient{
 		Client: &http.Client{
-			Transport: getDefaultTransport(&tls.Config{InsecureSkipVerify: true}),
+			Transport: getDefaultTransport(&tls.Config{InsecureSkipVerify: false}),
 		},
 	}
 }
@@ -311,7 +311,7 @@ func WithInsecure() ClientOption {
 			TLSClientConfig: &tls.Config{
 				MinVersion: tls.VersionTLS12,
 				//nolint:gosec // insecure option
-				InsecureSkipVerify: true,
+				InsecureSkipVerify: false,
 			},
 		}
 		return nil

@@ -58,7 +58,7 @@ func NewClient() Client {
 				Proxy: http.ProxyFromEnvironment,
 				TLSClientConfig: &tls.Config{
 					//nolint:gosec // used on tls-alpn-01 challenge
-					InsecureSkipVerify: true, // lgtm[go/disabled-certificate-check]
+					InsecureSkipVerify: false, // lgtm[go/disabled-certificate-check]
 				},
 			},
 		},

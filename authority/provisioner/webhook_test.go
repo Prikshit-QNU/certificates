@@ -652,7 +652,7 @@ func TestWebhook_Do(t *testing.T) {
 
 		transport := httptransport.New()
 		transport.TLSClientConfig = &tls.Config{
-			InsecureSkipVerify: true,
+			InsecureSkipVerify: false,
 			Certificates:       []tls.Certificate{cert},
 		}
 		client := &http.Client{
